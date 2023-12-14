@@ -5,11 +5,10 @@ openpyxl==3.0.7
 Pillow>=8.3.2
 jsonschema==3.2.0
 requests==2.22.0
-plotly_express==0.4.0
+plotly_express==0.4.1  # Mise à jour mineure pour la compatibilité
 streamlit-analytics==0.2.2
 streamlit-metrics==0.1.0
 textblob==0.15.3
-wordcloud==1.10.3
+wordcloud==1.8.1  # Mise à jour pour une version disponible
 spacy==3.0.7
 matplotlib==3.4.3
-
