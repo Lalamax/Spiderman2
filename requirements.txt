@@ -12,6 +12,7 @@ streamlit-metrics==0.1.0
 textblob==0.15.3
 wordcloud==1.8.1
 spacy==3.7.0  # Vérifiez la compatibilité avec les autres paquets
+https://github.com/explosion/spacy-models/releases/download/fr_core_news_sm-3.7.0/fr_core_news_sm-3.7.0.tar.gz
 matplotlib==3.4.3
 protobuf<4,>=3.20
 typer==0.9.0
