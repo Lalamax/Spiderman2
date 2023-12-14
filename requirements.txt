@@ -1,14 +1,15 @@
 plotly==5.4.0
 streamlit==1.2.0
-pandas==1.2.3
-openpyxl==3.0.7
+pandas==1.2.3  # Vérifiez si cette version de pandas est compatible avec les autres packages
+openpyxl==3.0.10  # Mise à jour pour une version compatible
 Pillow>=8.3.2
 jsonschema==3.2.0
 requests==2.22.0
-plotly_express==0.4.1  # Mise à jour mineure pour la compatibilité
+plotly_express==0.4.1
 streamlit-analytics==0.2.2
 streamlit-metrics==0.1.0
 textblob==0.15.3
-wordcloud==1.8.1  # Mise à jour pour une version disponible
-spacy==3.7.2
+wordcloud==1.8.1
+spacy==3.0.7  # Vérifiez si cette version de spacy est compatible avec les autres packages
 matplotlib==3.4.3
+click==7.1.2  # Spécification d'une version compatible avec streamlit 1.2.0
