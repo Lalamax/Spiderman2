@@ -12,3 +12,4 @@ textblob==0.15.3
 wordcloud==1.8.1  # Mise à jour pour une version disponible
 spacy==3.0.7
 matplotlib==3.4.3
+click>=7.1.2 
