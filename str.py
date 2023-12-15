@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-from textblob import TextBlob  # Remplacez ceci par votre propre analyse de sentiment
+from textblob import TextBlob 
 import plotly.graph_objects as go
 from wordcloud import WordCloud
 import spacy
@@ -34,21 +34,17 @@ if tab == tab1:
     fig_trend.update_traces(mode='lines+markers')
     fig_trend.update_layout(hovermode='x')
 
-    # Créer un ensemble de données fictif pour l'analyse des sentiments (remplacez ceci par vos propres données)
     dat = pd.read_excel('reviw.xlsx')
 
 
 
-    # Appliquer l'analyse de sentiment (remplacez ceci par votre propre analyse)
     dat['polarity'] = dat['txtavis'].astype(str).apply(lambda x: TextBlob(x).sentiment.polarity)
     dat['sentiment'] = dat['polarity'].apply(lambda x: "Positive" if x > 0 else ("Neutral" if x == 0 else "Negative"))
 
-    # Compter les occurrences de sentiment
     sentiment_counts = dat['sentiment'].value_counts()
     df_sentiments = sentiment_counts.reset_index()
     df_sentiments.columns = ['Sentiment', 'Count']
 
-    # Créer le deuxième graphique Plotly (répartition des sentiments)
     fig_sentiment = px.pie(df_sentiments, names='Sentiment', values='Count', title='Répartition des Sentiments',
                  hole=.3, color='Sentiment',
                  color_discrete_map={'Positive':'green', 'Negative':'red', 'Neutral':'gray'})
@@ -80,16 +76,6 @@ if tab == tab1:
         barmode='group',
         dragmode=False
     )
-
-    #st.set_page_config(layout="wide")
-    #st.markdown("""
-    #    <style>
-    #    .stApp {
-    #        background-image: url("https://wallpapers.com/images/hd/spider-man-miles-morales-ps5-1ushde5atjy9e2w2.jpg");
-    #        background-size: cover;
-    #    }
-    #    </style>
-    #    """, unsafe_allow_html=True)
 
 
 
@@ -135,13 +121,10 @@ if tab == tab1:
     # Charger le modèle SpaCy
     nlp = spacy.load("fr_core_news_sm")
 
-    # Votre code pour charger et préparer le DataFrame 'dat'
-    # ...
+
     avis_type = st.selectbox("Choisir le type d'avis", ["positif", "negatif"])
-    # Troisième rangée pour le sélecteur de nuage de mots et le graphique Plotly
     col1, col2 = st.columns(2)
 
-    # Sélecteur pour choisir entre avis positifs et négatifs dans la première colonne
     with col1:
 
 
@@ -190,7 +173,7 @@ if tab == tab1:
 
     # Deuxième colonne pour le graphique Plotly
     with col2:
-        # Exemple de données fictives pour le graphique
+        # Données choisit à la main car bug qui bloque le deploiement
         positive_freq = Counter({'incroyable': 15, 'magnifique': 12, 'excellent': 9, 'agréable': 7, 'super': 6})
         negative_freq = Counter({'horrible': 10, 'médiocre': 8, 'repetitive': 7, 'difficile': 5, 'déçu': 4})
         neutral_freq = Counter({'moyen': 6, 'basique': 5, 'standard': 4, 'ordinaire': 3, 'normal': 2})
