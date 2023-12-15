@@ -29,7 +29,7 @@ if tab == tab1:
     data['Search Trend'].fillna(method='ffill', inplace=True)
 
     # Créer le premier graphique Plotly (tendances de recherche)
-    fig_trend = px.line(data, x='Week', y='Search Trend', title='Search Trend Over Time for Spiderman 2',
+    fig_trend = px.line(data, x='Week', y='Search Trend', title='Tendance de recherche dans le temps pour Spiderman 2',
                   labels={'Week': 'Date', 'Search Trend': 'Search Trend'})
     fig_trend.update_traces(mode='lines+markers')
     fig_trend.update_layout(hovermode='x')
@@ -191,8 +191,8 @@ if tab == tab1:
     # Deuxième colonne pour le graphique Plotly
     with col2:
         # Exemple de données fictives pour le graphique
-        positive_freq = Counter({'excellent': 15, 'bon': 12, 'parfait': 9, 'agréable': 7, 'super': 6})
-        negative_freq = Counter({'mauvais': 10, 'horrible': 8, 'problème': 7, 'difficile': 5, 'déçu': 4})
+        positive_freq = Counter({'incroyable': 15, 'magnifique': 12, 'excellent': 9, 'agréable': 7, 'super': 6})
+        negative_freq = Counter({'horrible': 10, 'médiocre': 8, 'repetitive': 7, 'difficile': 5, 'déçu': 4})
         neutral_freq = Counter({'moyen': 6, 'basique': 5, 'standard': 4, 'ordinaire': 3, 'normal': 2})
 
         # Création du graphique Plotly
