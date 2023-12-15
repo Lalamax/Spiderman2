@@ -1,6 +1,3 @@
-D'accord, voici le contenu entièrement formaté en Markdown pour votre fichier README :
-
-```markdown
 # Analyse E-reputation du jeu Spiderman 2 avec Streamlit
 
 Cette application Streamlit vise à visualiser et analyser les tendances de recherche et l'opinion publique sur le jeu vidéo Spiderman 2. Elle utilise des graphiques interactifs et des analyses de sentiment pour fournir une vue d'ensemble de la réputation en ligne du jeu.
