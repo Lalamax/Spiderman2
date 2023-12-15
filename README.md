@@ -31,10 +31,10 @@ python -m spacy download fr_core_news_sm
 Pour lancer l'application, exécutez :
 
 ```bash
-streamlit run your_script.py
+streamlit run str.py
 ```
 
-Remplacez `your_script.py` par le nom de votre fichier script.
+Remplacez `str.py` par le nom de votre fichier script en cas de changement de nom.
 
 ## Structure du script
 
