@@ -29,7 +29,7 @@ if tab == tab1:
     data['Search Trend'].fillna(method='ffill', inplace=True)
 
     # Créer le premier graphique Plotly (tendances de recherche)
-    fig_trend = px.line(data, x='Week', y='Search Trend', title='Search Trend Over Time for Spiderman 2',
+    fig_trend = px.line(data, x='Week', y='Search Trend', title='Tendance de recherche dans le temps pour Spiderman 2',
                   labels={'Week': 'Date', 'Search Trend': 'Search Trend'})
     fig_trend.update_traces(mode='lines+markers')
     fig_trend.update_layout(hovermode='x')
@@ -191,9 +191,8 @@ if tab == tab1:
     # Deuxième colonne pour le graphique Plotly
     with col2:
         # Exemple de données fictives pour le graphique
-        positive_freq = Counter({'excellent': 15, 'bon': 12, 'parfait': 9, 'agréable': 7, 'super': 6})
-        negative_freq = Counter({'mauvais': 10, 'horrible': 8, 'problème': 7, 'difficile': 5, 'déçu': 4})
-        neutral_freq = Counter({'moyen': 6, 'basique': 5, 'standard': 4, 'ordinaire': 3, 'normal': 2})
+        positive_freq = Counter({'meilleure': 15, 'bon': 12, 'incroyable': 9, 'magnifique': 7, 'super': 6})
+        negative_freq = Counter({'répetitive': 10, 'ennuyeux': 8, 'problème': 7, 'difficile': 5, 'déçu': 4})
 
         # Création du graphique Plotly
         fig = go.Figure()
@@ -201,7 +200,6 @@ if tab == tab1:
         # Ajouter les barres pour chaque sentiment
         fig.add_trace(go.Bar(y=list(positive_freq.keys()), x=list(positive_freq.values()), name='Positif', orientation='h'))
         fig.add_trace(go.Bar(y=list(negative_freq.keys()), x=list(negative_freq.values()), name='Négatif', orientation='h'))
-        fig.add_trace(go.Bar(y=list(neutral_freq.keys()), x=list(neutral_freq.values()), name='Neutre', orientation='h'))
 
         # Mise à jour de la disposition
         fig.update_layout(
@@ -213,8 +211,7 @@ if tab == tab1:
                 'buttons': [
                     {'label': 'Tous', 'method': 'update', 'args': [{'visible': [True, True, True]}]},
                     {'label': 'Positif', 'method': 'update', 'args': [{'visible': [True, False, False]}]},
-                    {'label': 'Négatif', 'method': 'update', 'args': [{'visible': [False, True, False]}]},
-                    {'label': 'Neutre', 'method': 'update', 'args': [{'visible': [False, False, True]}]}
+                    {'label': 'Négatif', 'method': 'update', 'args': [{'visible': [False, True, False]}]}
                 ],
                 'direction': 'down',
                 'showactive': True
